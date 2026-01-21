@@ -1,0 +1,9 @@
+# Archivos de configuración con API keys
+js/config.js
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de node
+node_modules/

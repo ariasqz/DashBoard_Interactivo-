@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard de clima y noticias</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Buscar ciudad..." aria-label="Buscar ciudad">
+                <button id="search-btn" aria-label="Buscar">Buscar</button>
+            </div>
+        </header>
+        <section class="weather-current" aria-labelledby="current-weather-tittle">
+            <h2 id="current-weather-tittle">Clima Actual</h2>
+            <div id="current-weather" class="weather-card">
+                <p class="loading">Ingresa una ciudad para ver el clima</p>
+            </div>
+        </section>
+        <section class="weather-forecast" aria-labelledby="forecast-tittle">
+            <h2 id="forecast-tittle">Pronostico 5 dias</h2>
+            <div class="forecast-container" id="forecast"></div>
+        </section>
+        <section class="news-section" aria-labelledby="news-tittle">
+            <h2 id="news-tittle">Ultimas noticias</h2>
+            <div id="news-tittle"role="group" aria-label="filtros de categoria">
+                <button class="filter-btn-active" data-category="general" aria-pressed="true">General</button>
+                <button class="filter-btn" data-category=" technology" aria-pressed="false">Tecnologia</button>
+                <button class="filter-btn" data-category="sports" aria-pressed="false">Deportes</button>
+                <button class="filter-btn" data-category="business" aria-pressed="false">Negocios</button>
+            </div>
+            <div id="news-container" class="news-grid">
+                <p class="loading">Cargando noticias...</p>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
