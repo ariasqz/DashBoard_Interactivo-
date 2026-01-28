@@ -43,7 +43,7 @@ export function mostrarClimaActual(datos){
 
 }
 
-export function mostrarpronostico(datos){
+export function mostrarPronostico(datos){
     const contenedor = document.getElementById('forecast');
 
     let tarjetasHTML = '';
@@ -55,7 +55,6 @@ export function mostrarpronostico(datos){
         const temperatura = Math.round(dia.main.temp);
         const descripcion = dia.weather[0].description;
         const iconoUrl = `https://openweathermap.org/img/wn/${dia.weather[0].icon}@2x.png`;
-
         tarjetasHTML += `
         <div class="forecast-card">
             <p class="day">${nombreDia}</p>
@@ -64,7 +63,34 @@ export function mostrarpronostico(datos){
             <p class="desc">${descripcion}</p>
         </div>
         `;
+
     } 
     contenedor.innerHTML = tarjetasHTML;
+}
+
+export function mostrarNoticias(datos) {
+    const contenedor = document.getElementById('news-container');
+    let noticiasHTML = '';
     
+    datos.articles.forEach(noticia => {
+
+        const titulo = noticia.title;
+        const descripcion = noticia.description;
+        const url = noticia.url;
+        const imagenUrl = noticia.urlToImage;
+
+        if (!titulo || !url) return;
+
+        noticiasHTML += `
+        <article class="news-card">
+            ${imagenUrl ? `<img src="${imagenUrl}" alt="${titulo}">` : ''}
+            <div class="news-content">
+                <h3>${titulo}</h3>
+                <p>${descripcion || 'Sin descripción disponible'}</p>
+                <a href="${url}" target="_blank" rel="noopener noreferrer">Leer más</a>
+            </div>
+        </article>
+        `;
+    });   
+    contenedor.innerHTML = noticiasHTML;
 }

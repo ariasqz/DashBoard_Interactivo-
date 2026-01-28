@@ -1,7 +1,7 @@
 import API_CONFIG from './config.js';
 import { DEFAULT_UNIT, UNITS } from './constants.js';
 
-export async function ObtenerCLimaActual(ciudad) {
+export async function obtenerClimaActual(ciudad) {
 
     try {
         const url = `${API_CONFIG.WEATHER_BASE_URL}${'weather'}?q=${ciudad}&appid=${API_CONFIG.WEATHER_API_KEY}&units=${UNITS}&lang=es`;
