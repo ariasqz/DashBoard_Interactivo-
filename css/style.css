@@ -91,10 +91,13 @@ section h2 {
 }
 
 .weather-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 20px;
-    align-items: start;
+}
+
+.weather-column {
+    flex: 1;
+    min-width: 0;
 }
 
 .current-weather-container {
@@ -109,6 +112,7 @@ section h2 {
     box-shadow: 0 4px 12px var(--sombra);
     text-align: center;
     min-height: 450px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,7 +132,6 @@ section h2 {
 
 .weather-card h3 {
     font-size: 28px;
-    margin-right: 30px;
     color: var(--color-acento);
     margin-bottom: 20px;
 }
@@ -181,7 +184,8 @@ section h2 {
 
 .forecast-slider-wrapper {
     position: relative;
-    padding: 0 60px;
+    overflow: hidden;
+    width: 100%;
 }
 
 .forecast-slider {
@@ -202,15 +206,20 @@ section h2 {
     scroll-snap-align: start;
     background: var(--color-blanco);
     border-radius: var(--radio-borde);
+    padding: 30px;
     box-shadow: 0 4px 12px var(--sombra);
     text-align: center;
     min-height: 470px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: transform 0.3s ease;
 }
 
+.forecast-card:hover {
+    transform: scale(1.02);
+}
 
 .forecast-card .day {
     display: inline-block;
@@ -270,11 +279,11 @@ section h2 {
 }
 
 .slider-btn-left {
-    left: 0;
+    left: 10px;
 }
 
 .slider-btn-right {
-    right: 0;
+    right: 10px;
 }
 
 .news-filters {
@@ -405,15 +414,11 @@ section h2 {
 
 @media (max-width: 1023px) {
     .weather-layout {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
     
     .current-weather-container {
         position: static;
-    }
-    
-    .forecast-slider-wrapper {
-        padding: 0 60px;
     }
 }
 
@@ -431,8 +436,12 @@ section h2 {
         width: 100%;
     }
     
-    .forecast-slider-wrapper {
-        padding: 0 50px;
+    .slider-btn-left {
+        left: 5px;
+    }
+    
+    .slider-btn-right {
+        right: 5px;
     }
     
     .weather-card,

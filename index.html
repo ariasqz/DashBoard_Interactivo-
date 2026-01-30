@@ -22,14 +22,18 @@
         <section class="weather-section">
             <h2>Clima y Pronóstico</h2>
             <div class="weather-layout">
-                <div id="current-weather" class="current-weather-container">
+                <div class="weather-column">
+                    <div id="current-weather" class="current-weather-container">
+                    </div>
                 </div>
                 
-                <div class="forecast-slider-wrapper">
-                    <button class="slider-btn slider-btn-left" aria-label="Anterior">◀</button>
-                    <div id="forecast-slider" class="forecast-slider">
+                <div class="weather-column">
+                    <div class="forecast-slider-wrapper">
+                        <button class="slider-btn slider-btn-left" aria-label="Anterior">◀</button>
+                        <div id="forecast-slider" class="forecast-slider">
+                        </div>
+                        <button class="slider-btn slider-btn-right" aria-label="Siguiente">▶</button>
                     </div>
-                    <button class="slider-btn slider-btn-right" aria-label="Siguiente">▶</button>
                 </div>
             </div>
         </section>
